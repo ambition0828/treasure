@@ -1,0 +1,156 @@
+.page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #F4F4F6;
+  overflow: scroll;
+}
+.page .rectange {
+  display: flex;
+  justify-content: space-evenly;
+  width: 90%;
+  height: 6rem;
+  margin: 0 auto;
+  background: url(/img/rectange.4cb445cc.png) no-repeat;
+  background-size: 100% 100%;
+  margin-top: 0.8rem;
+}
+.page .rectange .left-img {
+  width: 4.1rem;
+  height: 3.5rem;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.page .rectange .left-img img {
+  width: 100%;
+}
+.page .rectange .right-detail {
+  position: relative;
+  top: 50%;
+  left: -0.5rem;
+  transform: translateY(-50%);
+  width: 11rem;
+  height: 5rem;
+}
+.page .rectange .right-detail .diamond-count {
+  margin-bottom: 0.3rem;
+  font-size: 0.6933rem;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #505050;
+  letter-spacing: 1px;
+}
+.page .rectange .right-detail .progress-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.3rem;
+  margin-top: 0.4rem;
+}
+.page .rectange .right-detail .progress-box .progress-bar {
+  width: 75%;
+  height: 0.25rem;
+  background: #EBEBEB;
+  border-radius: 0.3rem;
+}
+.page .rectange .right-detail .progress-box .progress-bar .progress {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, #F17FE5 0%, #8D7AE8 100%);
+  border-radius: 0.3rem;
+}
+.page .rectange .right-detail .progress-box .right-progress {
+  position: absolute;
+  right: 0.8rem;
+  font-size: 0.64rem;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #A8A8A8;
+  letter-spacing: 1px;
+}
+.page .rectange .right-detail .drawReward {
+  font-size: 0.5666rem;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #9D9999;
+  line-height: 30px;
+  letter-spacing: 1px;
+}
+.page .rectange .right-detail .count {
+  display: flex;
+  justify-content: space-between;
+}
+.page .rectange .right-detail .count #count {
+  font-size: 0.58666rem;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #9D9999;
+  letter-spacing: 1px;
+}
+.page .rectange .right-detail .total {
+  margin-right: 1.4rem;
+  font-size: 0.5866rem;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #A8A8A8;
+  letter-spacing: 1px;
+}
+.page .rectange .right-detail .total #diamond {
+  color: #8D7AE8;
+}
+.page .orderDetail {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  height: 4.586rem;
+  margin: 1rem auto;
+  background: url(img/background_1.png) no-repeat;
+  background-size: 100% 100%;
+  justify-content: space-around;
+}
+.page .orderDetail .text {
+  font-size: 0.69333rem;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #A0A0A0;
+  letter-spacing: 1px;
+}
+.page .orderDetail .value {
+  font-size: 0.69333rem;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #505050;
+  letter-spacing: 1px;
+}
+.page .orderDetail .orderNo,
+.page .orderDetail .payTime {
+  width: 100%;
+}
+.page .orderDetail .orderNo span,
+.page .orderDetail .payTime span {
+  margin-left: 1rem;
+}
+.page .orderDetail .orderNo .icon,
+.page .orderDetail .payTime .icon {
+  display: inline-block;
+  width: 0.777rem;
+  height: 0.6933rem;
+  background: url(img/min.png) no-repeat;
+  background-size: 100% 100%;
+}
+.page .orderDetail .drawNo .icon {
+  position: relative;
+  top: 0.14rem;
+}
+.page .orderDetail .drawNo .draw_No {
+  position: relative;
+  left: -0.3rem;
+}
+.page .orderDetail .codeValue {
+  display: flex;
+  flex-wrap: wrap;
+}

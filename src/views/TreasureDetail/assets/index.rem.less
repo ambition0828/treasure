@@ -1,0 +1,263 @@
+.page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #F4F4F6;
+  overflow: scroll;
+
+  .diamondCount {
+    margin-top: 0.976rem;
+    margin-left: 1.52rem;
+    // border: 1px solid #000;
+    font-size: 0.96rem;
+    font-family: PingFangSC-Medium, PingFang SC;
+    font-weight: 550;
+    color: #505050;
+    line-height: 1.333rem;
+    letter-spacing: 2px;
+  }
+
+  .pencil img {
+    width: 16.986rem;
+    height: 0.3rem;
+    margin-left: 1.52rem;
+    margin-top: 1rem;
+  }
+
+  .copies {
+    display: flex;
+    margin-left: 1.52rem;
+    margin-top: 1rem;
+    width: 16.986rem;
+    height: 3.433333rem;
+
+    // border: 1px solid #000;
+    .left {
+      width: 50%;
+      height: 100%;
+      background: url(./img/leftCount.png) no-repeat;
+      background-size: 100% 100%;
+      // border: 1px solid #000;
+    }
+
+    .right {
+      width: 50%;
+      height: 100%;
+      background: url(./img/right.png) no-repeat;
+      background-size: 100% 100%;
+      // border: 1px solid #000;
+    }
+
+    .number {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 2.92rem;
+      height: 2.213rem;
+      // border: 1px solid #000;
+      margin: 0 auto;
+
+      .count {
+        text-align: center;
+        font-size: 0.9rem;
+        font-family: PingFangSC-Medium, PingFang SC;
+        font-weight: 550;
+        color: #000000;
+        letter-spacing: 2px;
+      }
+
+      span {
+        font-size: 0.2rem;
+        font-family: PingFangSC-Regular, PingFang SC;
+        font-weight: 400;
+        color: #402C34;
+        letter-spacing: 1px;
+      }
+    }
+  }
+
+  .drawNumber {
+    width: 16.986rem;
+    height: 2.29rem;
+    margin-left: 1.52rem;
+    margin-top: 1rem;
+    // border: 1px solid #000;
+    background: url(./img/number.png) no-repeat;
+    background-size: 100% 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1rem 0 1rem;
+
+    span {
+      display: block;
+      height: 100%;
+      position: relative;
+      line-height: 2.29rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .left {
+      font-size: 0.8rem;
+      font-family: PingFangSC-Regular, PingFang SC;
+      font-weight: 400;
+      color: #000000;
+      letter-spacing: 1px;
+    }
+
+    .right {
+      font-size: 0.8rem;
+      font-family: PingFangSC-Medium, PingFang SC;
+      font-weight: 500;
+      color: #FF114B;
+      letter-spacing: 1px;
+    }
+  }
+
+  .currentTime {
+    width: 16.986rem;
+    height: 5.2rem;
+    // border: 1px solid #000;
+    margin: 1rem 0 0 1.52rem;
+    padding: 0.5rem 0 0 1rem;
+    background: url(./img/currentTime.png) no-repeat;
+    background-size: 100% 100%;
+
+    // 继承实现文字控制
+    font-size: 0.5333rem;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: #666666;
+    line-height: 1.2rem;
+    letter-spacing: 1px;
+
+    .title {
+      font-size: 0.74rem;
+      font-family: PingFangSC-Medium, PingFang SC;
+      font-weight: 500;
+      color: #464646;
+      line-height: 0.88rem;
+      letter-spacing: 1px;
+    }
+  }
+
+  .drawRule {
+    width: 16.986rem;
+    height: 18.926rem;
+    // border: 1px solid #000;
+    margin: 1rem 0 0 1.52rem;
+    padding: 0 1rem 0 1rem;
+    background: url(./img/rule.png) no-repeat;
+    background-size: 100% 100%;
+
+    .title_1,
+    .title_2 {
+      font-size: 0.74rem;
+      font-family: PingFangSC-Medium, PingFang SC;
+      font-weight: 500;
+      color: #464646;
+      line-height: 33px;
+      letter-spacing: 1px;
+    }
+
+    span {
+      display: block;
+      font-size: 0.533rem;
+      font-family: PingFangSC-Regular, PingFang SC;
+      font-weight: 400;
+      margin-bottom: 0.1rem;
+      color: #666666;
+      line-height: 0.9rem;
+      // word-wrap: break-word;
+      word-break: break-all;
+      // letter-spacing: 1px;
+    }
+
+    .state {
+      font-size: 0.586rem;
+      font-family: PingFangSC-Medium, PingFang SC;
+      font-weight: 500;
+      color: #8D7AE8;
+    }
+  }
+
+  // 中奖玩家和夺宝玩家公共样式
+  .drawPlayer {
+    position: relative;
+    width: 16.986rem;
+    height: 5.5rem;
+    // border: 1px solid #000;
+    margin: 1rem 0 0 1.52rem;
+
+    .title {
+      font-size: 0.74666rem;
+      font-family: PingFangSC-Semibold, PingFang SC;
+      font-weight: 600;
+      color: #464646;
+      line-height: 1.6rem;
+      letter-spacing: 1px;
+    }
+
+    .userDetail {
+      display: flex;
+      .avatar {
+        width: 1.6rem;
+        height: 1.6rem;
+        // border: 1px solid #000;
+        overflow: hidden;
+
+        img {
+          width: 1.6rem;
+          height: 1.6rem;
+        }
+      }
+      .detail {
+          margin-left: 0.8rem;
+        .userName {
+          font-size: 0.6866rem;
+          font-family: PingFangSC-Medium, PingFang SC;
+          font-weight: 500;
+          color: #464646;
+          // line-height: 30px;
+          letter-spacing: 1px;
+        }
+        .time {
+          font-size: 0.48rem;
+          font-family: PingFangSC-Regular, PingFang SC;
+          font-weight: 400;
+          color: #464646;
+          // line-height: 25px;
+          letter-spacing: 1px;
+        }
+      }
+      .count_1 {
+        position: absolute;
+        right: 0rem;
+        font-size: 0.48rem;
+        font-family: PingFangSC-Regular, PingFang SC;
+        font-weight: 400;
+        color: #464646;
+        line-height: 1.5rem;
+        letter-spacing: 1px;
+      }
+    }
+    .number {
+      margin-top: 0.4rem;
+      width: 5.12rem;
+      height: 1.54666rem;
+      background: url(./img/number_1.png) no-repeat;
+      background-size: 100% 100%;
+
+      font-size: 0.58666rem;
+      font-family: PingFangSC-Regular, PingFang SC;
+      font-weight: 400;
+      color: #5538DE;
+      line-height: 1.7rem;
+      letter-spacing: 1px;
+      text-align: center;
+    }
+  }
+
+}

@@ -1,0 +1,192 @@
+.page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #F4F4F6;
+  overflow: scroll;
+
+  .rectange {
+    display: flex;
+    justify-content: space-evenly;
+    width: 90%;
+    height: 6rem;
+    margin: 0 auto;
+    background: url(/img/rectange.4cb445cc.png) no-repeat;
+    background-size: 100% 100%;
+    margin-top: 0.8rem;
+
+    .left-img {
+      width: 4.1rem;
+      height: 3.5rem;
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+      // border: 1px solid #000;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .right-detail {
+      position: relative;
+      top: 50%;
+      left: -0.5rem;
+      transform: translateY(-50%);
+      width: 11rem;
+      height: 5rem;
+      // border: 1px solid #000;
+
+      .diamond-count {
+        margin-bottom: 0.3rem;
+        font-size: 0.6933rem;
+        font-family: PingFangSC-Medium, PingFang SC;
+        font-weight: 500;
+        color: #505050;
+        // line-height: 37px;
+        letter-spacing: 1px;
+      }
+
+      .progress-box {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 0.3rem;
+        margin-top: 0.4rem;
+
+        .progress-bar {
+          // margin-top: 0.2rem;
+          width: 75%;
+          height: 0.25rem;
+          background: #EBEBEB;
+          border-radius: 0.3rem;
+
+          .progress {
+            display: block;
+            height: 100%;
+            background: linear-gradient(90deg, #F17FE5 0%, #8D7AE8 100%);
+            border-radius: 0.3rem;
+          }
+        }
+
+        .right-progress {
+          position: absolute;
+          right: 0.8rem;
+          font-size: 0.64rem;
+          font-family: PingFangSC-Regular, PingFang SC;
+          font-weight: 400;
+          color: #A8A8A8;
+          // line-height: 33px;
+          letter-spacing: 1px;
+        }
+      }
+
+      .drawReward {
+        font-size: 0.5666rem;
+        font-family: PingFangSC-Regular, PingFang SC;
+        font-weight: 400;
+        color: #9D9999;
+        line-height: 30px;
+        letter-spacing: 1px;
+      }
+
+      .count {
+        display: flex;
+        justify-content: space-between;
+
+        #count {
+          font-size: 0.58666rem;
+          font-family: PingFangSC-Regular, PingFang SC;
+          font-weight: 400;
+          color: #9D9999;
+          // line-height: 30px;
+          letter-spacing: 1px;
+        }
+      }
+
+      .total {
+        margin-right: 1.4rem;
+        font-size: 0.5866rem;
+        font-family: PingFangSC-Regular, PingFang SC;
+        font-weight: 400;
+        color: #A8A8A8;
+        // line-height: 30px;
+        letter-spacing: 1px;
+
+        #diamond {
+          color: #8D7AE8;
+        }
+      }
+
+    }
+  }
+
+  .orderDetail {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    height: 4.586rem;
+    // border: 1px solid #000;
+    margin: 1rem auto;
+    background: url(./img/background_1.png) no-repeat;
+    background-size: 100% 100%;
+    justify-content: space-around;
+
+    .text {
+      font-size: 0.69333rem;
+      font-family: PingFangSC-Medium, PingFang SC;
+      font-weight: 500;
+      color: #A0A0A0;
+      // line-height: 37px;
+      letter-spacing: 1px;
+    }
+
+    .value {
+      font-size: 0.69333rem;
+      font-family: PingFangSC-Medium, PingFang SC;
+      font-weight: 500;
+      color: #505050;
+      // line-height: 37px;
+      letter-spacing: 1px;
+    }
+
+    .orderNo,
+    .payTime {
+      // border: 1px solid #000;
+      width: 100%;
+      span {
+        margin-left: 1rem;
+      }
+      // 抽奖码样式
+      .icon {
+        display: inline-block;
+        width: 0.777rem;
+        height: 0.6933rem;
+        // border: 1px solid #000;
+        background: url(./img/min.png) no-repeat;
+        background-size: 100% 100%;
+      }
+    }
+
+    // 抽奖码样式
+    .drawNo {
+      .icon {
+        position: relative;
+        top: 0.14rem;
+      }
+      .draw_No {
+        position: relative;
+        left: -0.3rem;
+      }
+    }
+    // 抽奖换行处理
+    .codeValue {
+      // border: 1px solid #000;
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+}

@@ -1,0 +1,222 @@
+.page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+}
+.page .diamond {
+  display: flex;
+  justify-content: end;
+  width: 17.14rem;
+  height: 4.22rem;
+  margin: 1rem auto;
+}
+.page .diamond .diamond-img {
+  width: 4.72rem;
+  height: 100%;
+}
+.page .diamond .diamond-img img {
+  width: 100%;
+  height: 100%;
+}
+.page .diamond .diamond-detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 11.65333rem;
+  height: 100%;
+}
+.page .diamond .diamond-detail .top {
+  font-size: 0.693rem;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #505050;
+  letter-spacing: 1px;
+}
+.page .diamond .diamond-detail .progress-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.746rem;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #9A9797;
+  letter-spacing: 1px;
+}
+.page .diamond .diamond-detail .progress-box .progress-bar {
+  width: 8.35rem;
+  height: 0.29333rem;
+  background: url(img/pencil.png) no-repeat;
+  background-size: 100% 100%;
+}
+.page .diamond .diamond-detail .progress-box .progress-bar .progress {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, #F17FE5 0%, #8D7AE8 100%);
+  border-radius: 0.3rem;
+}
+.page .diamond .diamond-detail .surplus {
+  font-size: 0.586rem;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #9A9797;
+  line-height: 30px;
+  letter-spacing: 1px;
+}
+.page .copies {
+  display: flex;
+  margin: 1rem auto;
+  width: 17.14rem;
+  height: 3.433333rem;
+}
+.page .copies .left {
+  width: 50%;
+  height: 100%;
+  background: url(img/left.png) no-repeat;
+  background-size: 100% 100%;
+}
+.page .copies .right {
+  width: 50%;
+  height: 100%;
+  background: url(img/right.png) no-repeat;
+  background-size: 100% 100%;
+}
+.page .copies .number {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2.92rem;
+  height: 2.213rem;
+  margin: 0 auto;
+}
+.page .copies .number .count {
+  text-align: center;
+  font-size: 0.9rem;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 550;
+  color: #000000;
+  letter-spacing: 2px;
+}
+.page .copies .number span {
+  font-size: 0.2rem;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #402C34;
+  letter-spacing: 1px;
+}
+.page .drawPrice {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 17.14rem;
+  height: 2.82666rem;
+  margin: 1rem auto;
+  background: url(img/bkg_drawStyle.png) no-repeat;
+  background-size: 100% 100%;
+}
+.page .drawPrice .style_draw {
+  font-size: 0.8rem;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #040404;
+  letter-spacing: 1px;
+}
+.page .drawPrice .text {
+  font-size: 0.5333rem;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #9D9999;
+  line-height: 28px;
+  letter-spacing: 1px;
+}
+.page .drawPlayer {
+  position: relative;
+  width: 17.14rem;
+  height: 5.5rem;
+  margin: 1rem auto;
+}
+.page .drawPlayer .title {
+  font-size: 0.8rem;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #040404;
+  line-height: 42px;
+  letter-spacing: 1px;
+}
+.page .drawPlayer .userDetail {
+  display: flex;
+}
+.page .drawPlayer .userDetail .avatar {
+  width: 2.933rem;
+  height: 2.933rem;
+  overflow: hidden;
+}
+.page .drawPlayer .userDetail .avatar img {
+  width: 2.933rem;
+  height: 2.933rem;
+}
+.page .drawPlayer .userDetail .detail {
+  margin-left: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.page .drawPlayer .userDetail .detail .userName {
+  font-size: 0.8rem;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #040404;
+  letter-spacing: 1px;
+}
+.page .drawPlayer .userDetail .detail .time {
+  font-size: 0.48rem;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #464646;
+  letter-spacing: 1px;
+}
+.page .drawPlayer .userDetail .count_1 {
+  position: absolute;
+  top: 50%;
+  right: 0rem;
+  font-size: 0.48rem;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #464646;
+  line-height: 1.5rem;
+  letter-spacing: 1px;
+}
+.page .suction-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 4.64rem;
+  padding: 0.5rem 1rem 0 1rem;
+  background: url(img/suctionBottom.png) no-repeat;
+  background-size: 100% 100%;
+}
+.page .suction-bottom .left-text {
+  font-size: 0.74666rem;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #6D6D6D;
+  letter-spacing: 1px;
+}
+.page .suction-bottom .join-Now {
+  text-align: center;
+  width: 5.5466rem;
+  height: 2.3466rem;
+  line-height: 2.3466rem;
+  background: url(img/join-now.png) no-repeat;
+  background-size: 100% 100%;
+  font-size: 0.2133rem;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #FFFFFF;
+  letter-spacing: 1px;
+}
