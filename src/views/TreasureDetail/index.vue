@@ -7,7 +7,7 @@
       @click-left="onClickLeft"
     />
     <div class="diamondCount">
-      <span>&nbsp;[第6253期] 10万钻石</span>
+      <span>&nbsp;[第{{list.id}}期] {{list.title}}</span>
     </div>
     <div class="pencil">
       <img src="./assets/img/pencil.png" alt="" />
@@ -15,26 +15,26 @@
     <div class="copies">
       <div class="left">
         <div class="number">
-          <div class="count">40</div>
+          <div class="count">{{list.join_count}}</div>
           <span>参与份数</span>
         </div>
       </div>
       <div class="right">
         <div class="number">
-          <div class="count">40</div>
+          <div class="count">{{list.open_num}}</div>
           <span>开奖份数</span>
         </div>
       </div>
     </div>
     <div class="drawNumber">
       <span class="left">开奖号码</span>
-      <span class="right">1000024</span>
+      <span class="right">{{list.luck_sn}}</span>
     </div>
     <div class="currentTime">
       <div class="title">本期时间</div>
-      <div class="currentTime_1">本期时间：2020-02-15 19:28:21</div>
-      <div class="finishTime">本期时间：2020-02-15 19:28:21</div>
-      <div class="startTime">本期时间：2020-02-15 19:28:21</div>
+      <div class="currentTime_1">本期时间：{{ getTime(list.luck_time)}}</div>
+      <div class="finishTime">完成时间：{{ getTime(list.reach_time)}}</div>
+      <div class="startTime">开奖时间：{{ getTime(list.start_time)}}</div>
     </div>
     <div class="drawRule">
       <div class="title_1">开奖规则</div>
@@ -93,12 +93,45 @@
   </div>
 </template>
 <script>
+import {getTreasureDetail} from '@/api/treasure.js'
 export default {
+  data() {
+    return {
+      list:{}
+    }
+  },
   methods: {
     onClickLeft() {
       this.$router.back();
     },
+    getTime(time) {
+      var date = new Date(time);
+      var len = time.toString().length;
+      if (len < 13) {
+        var sub = 13 - len;
+        sub = Math.pow(10, sub);
+        date = new Date(time * sub);
+      }
+      var y = date.getFullYear() + "-";
+      // y = ()
+      var M = date.getMonth() + 1;
+      M = (M < 10 ? "0" + M : M) + "-";
+      var d = date.getDate();
+      d = (d < 10 ? "0" + d : d) + "";
+      var h = date.getHours();
+      h = (h < 10 ? "0" + h : h) + ":";
+      var m = date.getMinutes();
+      m = m < 10 ? "0" + m : m;
+      return y + M + d + " " + h + m;
+    }
   },
+  async created () {
+    const res = await getTreasureDetail({
+      id: this.$route.query.id
+    })
+    console.log(res);
+    this.list = res.data
+  }
 };
 </script>
 <style scoped lang="less" src="./assets/index.rem.less">

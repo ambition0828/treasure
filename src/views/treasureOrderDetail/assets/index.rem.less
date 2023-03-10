@@ -189,4 +189,85 @@
       flex-wrap: wrap;
     }
   }
+
+  // 抽奖码--------------------------------------
+    .drawReward-code {
+      width: 90%;
+      margin: 1rem auto;
+      background: url(./img/bkg_2.png) no-repeat;
+      background-size: 100% 100%;
+  
+      .text {
+        font-size: 0.69333rem;
+        font-family: PingFangSC-Medium, PingFang SC;
+        font-weight: 500;
+        color: #A0A0A0;
+        // line-height: 37px;
+        letter-spacing: 1px;
+      }
+  
+      .value {
+        font-size: 0.69333rem;
+        font-family: PingFangSC-Medium, PingFang SC;
+        font-weight: 500;
+        color: #505050;
+        // line-height: 37px;
+        letter-spacing: 1px;
+      }
+  
+      .orderNo
+       {
+        // border: 1px solid #000;
+        width: 100%;
+        height: 2rem;
+        line-height: 2rem;
+        // border-bottom: 1px dashed #333;
+        span {
+          margin-left: 1rem;
+        }
+  
+        // 抽奖码样式
+        .icon {
+          display: inline-block;
+          width: 0.777rem;
+          height: 0.6933rem;
+          // border: 1px solid #000;
+          background: url(./img/min.png) no-repeat;
+          background-size: 100% 100%;
+        }
+      }
+      .split-role {
+        margin: 0 auto;
+        width: 99%;
+        height: 1px;
+        background: url(./img/lujing.png) no-repeat;
+      }
+      // 抽奖码样式
+      .drawNo {
+        .icon {
+          position: relative;
+          top: 0.14rem;
+        }
+  
+        .draw_No {
+          position: relative;
+          left: -0.3rem;
+        }
+      }
+  
+      // 抽奖换行处理
+      .codeValue {
+        // border: 1px solid #000;
+        padding: 0.5rem 0.5rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+          // text-align: left;
+        span {
+          display: block;
+          // margin: 0 0.3rem;
+          text-align: left;
+        }
+      }
+    }
 }

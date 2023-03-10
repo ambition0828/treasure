@@ -7,41 +7,44 @@
       @click-left="onClickLeft"
     >
     </van-nav-bar>
-    <van-tabs class="tab-el" v-model="active" sticky>
-      <van-tab title="待开奖">
+    <van-tabs class="tab-el"  v-model="active" sticky>
+      <van-tab  title="待开奖">
         <van-list
           v-model="loading"
           :finished="finished"
           finished-text="没有更多了"
-          @load="onLoad"
+          @load="onLoad(1)"
         >
-          <!-- 渲染位置 -->
-          <div class="rectange" v-for="(item, index) in 16" :key="index" @click="treasureOrderDetail">
+          <div
+            class="rectange"
+            v-for="(item, index) in list"
+            :key="index"
+            @click="treasureOrderDetail(item.id,1)"
+          >
             <div class="left-img">
-              <img src="./assets/img/diamond.png" alt="" />
+              <img :src="item.reward_icon" alt="" />
             </div>
             <div class="right-detail">
-              <span class="diamond-count">10万钻石</span>
-              <!-- 进度条 -->
+              <span class="diamond-count">{{ item.title }}</span>
               <div class="progress-box">
                 <div class="progress-bar">
                   <span
                     class="progress"
-                    :style="{ width: progress + '%' }"
+                    :style="{ width: item.join_ratio + '%' }"
                   ></span>
                 </div>
-                <span class="right-progress">{{ progress }}%</span>
+                <span class="right-progress">{{ item.join_ratio }}%</span>
               </div>
               <div class="purchase">
-                <span>购买时间：2023-02-15-18：07</span>
+                <span>购买时间：{{ getTime(item.join_time) }}</span>
               </div>
               <div class="surplus">
-                <span>还差23份开奖</span>
+                <span>还差{{ item.remain }}份开奖</span>
               </div>
               <div class="count">
-                <span id="count">数量：2</span>
+                <span id="count">数量：{{ item.join_count }}</span>
                 <div class="total">
-                  合计：<span id="diamond">1000钻石</span>
+                  合计：<span id="diamond">{{ item.all_money }}钻石</span>
                 </div>
               </div>
             </div>
@@ -53,81 +56,149 @@
           v-model="loading"
           :finished="finished"
           finished-text="没有更多了"
-          @load="onLoad"
+          @load="onLoad(2)"
         >
-        <div class="rectange" v-for="(item, index) in 16" :key="index" @click="treasureOrderDetail">
-          <div class="left-img">
-            <img src="./assets/img/diamond.png" alt="" />
-          </div>
-          <div class="right-detail">
-            <span class="diamond-count">10万钻石</span>
-            <!-- 进度条 -->
-            <div class="progress-box">
-              <div class="progress-bar">
-                <span
-                  class="progress"
-                  :style="{ width: progress + '%' }"
-                ></span>
+          <div
+            class="rectange"
+            v-for="(item, index) in list_2"
+            :key="index"
+            @click="treasureOrderDetail(item.id,2)"
+          >
+            <div class="left-img">
+              <img :src="item.reward_icon" alt="" />
+            </div>
+            <div class="right-detail">
+              <span class="diamond-count">{{item.title}}</span>
+              <div class="progress-box">
+                <div class="progress-bar">
+                  <span
+                    class="progress"
+                    :style="{ width: item.join_ratio + '%' }"
+                  ></span>
+                </div>
+                <span class="right-progress">{{ item.join_ratio }}%</span>
               </div>
-              <span class="right-progress">{{ progress }}%</span>
-            </div>
-            <div class="purchase">
-              <span>购买时间：2023-02-15-18：07</span>
-            </div>
-            <div class="surplus">
-              <!-- <span>还差23份开奖</span> -->
-              <span class="number">中奖号：10000002</span>
-            </div>
-            <div class="count">
-              <span id="count">数量：2</span>
-              <div class="total">合计：<span id="diamond">1000钻石</span></div>
+              <div class="purchase">
+                <span>购买时间：{{getTime(item.join_time)}}</span>
+              </div>
+              <div class="surplus">
+                <span class="number">中奖号：{{item.luck_sn}}</span>
+              </div>
+              <div class="count">
+                <span id="count">数量：{{item.join_count}}</span>
+                <div class="total">
+                  合计：<span id="diamond">{{item.all_money}}钻石</span>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
         </van-list>
-        
       </van-tab>
     </van-tabs>
   </div>
 </template>
 <script>
+import { terasureOrder } from "@/api/treasure.js";
 export default {
   data() {
     return {
-      active: 2,
+      active: 0,
       progress: 70,
-      // list: [],
+      list: [],
+      // 当前页码
+      page: 1,
       loading: false,
       finished: false,
+      // 已开奖列表
+      list_2: [],
+      // 接口参数
+      type: 1,
+      // 用于区分点击待开奖和已开奖
+      // mark: 1,
     };
   },
+  // watch: {
+  //   active(newVal,oldVal) {
+  //     console.log(newVal,oldVal);
+  //     if(newVal == 1) {
+  //       this.type = 2
+  //     } else if (newVal == 0 ) {
+  //       this.type = 1
+  //     }
+  //     console.log('active',this.active);
+  //   }
+  // },
   methods: {
     onClickLeft() {
       this.$router.back();
     },
-    onLoad() {
+    // 上拉加载
+    async onLoad(type) {
+      const res = await terasureOrder({
+        type: type,
+        page: this.page,
+      });
+      this.page++;
+      // 判断待开将 已开奖参数
+      if (type == 1) {
+        this.list.push(...res.data.data);
+      } else if (type == 2) {
+        this.list_2.push(...res.data.data);
+      }
       this.loading = false;
-      this.finished = true;
-      // 异步更新数据
-      // setTimeout 仅做示例，真实场景中一般为 ajax 请求
-      // setTimeout(() => {
-      //   for (let i = 0; i < 10; i++) {
-      //     this.list.push(this.list.length + 1);
-      //   }
-
-      //   // 加载状态结束
-      //   this.loading = false;
-
-      //   // 数据全部加载完成
-      //   if (this.list.length >= 40) {
-      //     this.finished = true;
-      //   }
-      // }, 1000);
-    }, 
-    treasureOrderDetail() {
-      this.$router.push('/treasureOrderDetail')
-    }
+      if (this.page > res.data.total) {
+        this.finished = true;
+      }
+    },
+    async onLoad_2() {
+      const res = await terasureOrder({
+        type: 2,
+        page: this.page,
+      });
+      this.page++;
+      // 判断待开将 已开奖参数
+      this.list_2.push(...res.data.data);
+      this.loading = false;
+      if (this.page > res.data.total) {
+        this.finished = true;
+      }
+    },
+    // 时间戳处理
+    getTime(time) {
+      var date = new Date(time);
+      var len = time.toString().length;
+      if (len < 13) {
+        var sub = 13 - len;
+        sub = Math.pow(10, sub);
+        date = new Date(time * sub);
+      }
+      var y = date.getFullYear() + "-";
+      // y = ()
+      var M = date.getMonth() + 1;
+      M = (M < 10 ? "0" + M : M) + "-";
+      var d = date.getDate();
+      d = (d < 10 ? "0" + d : d) + "";
+      var h = date.getHours();
+      h = (h < 10 ? "0" + h : h) + ":";
+      var m = date.getMinutes();
+      m = m < 10 ? "0" + m : m;
+      return y + M + d + " " + h + m;
+    },
+    treasureOrderDetail(id,mark) {
+      console.log(id,mark);
+      this.$router.push({
+        path:'/treasureOrderDetail',
+        query: {
+          id: id,
+          mark: mark
+        }
+      });
+    },
   },
+  created () {
+    // 已开奖有bug
+    this.onLoad_2()
+  }
 };
 </script>
 <style scoped lang="less" src="./assets/idnex.rem.less">

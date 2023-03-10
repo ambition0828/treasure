@@ -1,0 +1,225 @@
+.page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(img/bkg_1.png) no-repeat;
+  background-size: 100% 100%;
+}
+.page .diamond-treasure {
+  width: 8.826rem;
+  height: 2.16rem;
+  margin: 0 auto;
+  margin-top: 1rem;
+  background: url(img/diamond-treasure.png) no-repeat;
+  background-size: 100% 100%;
+}
+.page .treasure {
+  position: absolute;
+  left: 1.3rem;
+  top: 3.8rem;
+  width: 17.7rem;
+  overflow: scroll;
+  top: 3rem;
+  bottom: 0;
+  left: 1.4rem;
+  width: 17.226rem;
+  margin-top: 1rem;
+}
+.page .treasure .rectange {
+  width: 100%;
+  height: 6rem;
+  background: url(img/rectangle.png) no-repeat;
+  background-size: 100% 100%;
+  margin-top: 0.7rem;
+}
+.page .treasure .rectange .left {
+  position: relative;
+  float: left;
+  width: 7rem;
+  height: 6rem;
+}
+.page .treasure .rectange .left .top {
+  width: 100%;
+  height: 1.2rem;
+}
+.page .treasure .rectange .left .top .status,
+.page .treasure .rectange .left .top .status_1,
+.page .treasure .rectange .left .top .status_2,
+.page .treasure .rectange .left .top .count {
+  float: left;
+  height: 100%;
+  width: 49%;
+  text-align: center;
+}
+.page .treasure .rectange .left .top .countDown {
+  align-items: center;
+  position: relative;
+  top: -1.19rem;
+  left: 3.5rem;
+  width: 3.8rem;
+  display: flex;
+}
+.page .treasure .rectange .left .top .countDown .text_1 {
+  position: relative;
+  font-size: 0.2rem;
+  display: block;
+}
+.page .treasure .rectange .left .top .status {
+  background: linear-gradient(55deg, #FFDC62 0%, #FFB733 100%);
+  border-radius: 0.7rem 0.2rem 0.2rem 0.2rem;
+  margin-left: 0.09rem;
+}
+.page .treasure .rectange .left .top .status .text {
+  width: 60px;
+  height: 28px;
+  font-size: 0.65rem;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 600;
+  color: #FFFFFF;
+  line-height: 0.65rem;
+}
+.page .treasure .rectange .left .top .status_1 {
+  background: #F35549;
+  background-size: 100% 100%;
+  border-radius: 0.7rem 0.2rem 0.2rem 0.2rem;
+  margin-left: 0.09rem;
+}
+.page .treasure .rectange .left .top .status_1 .text {
+  width: 60px;
+  height: 28px;
+  font-size: 0.65rem;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 600;
+  color: #FFFFFF;
+  line-height: 0.65rem;
+}
+.page .treasure .rectange .left .top .status_2 {
+  background: #9786F8;
+  background-size: 100% 100%;
+  border-radius: 0.7rem 0.2rem 0.2rem 0.2rem;
+  margin-left: 0.09rem;
+}
+.page .treasure .rectange .left .top .status_2 .text {
+  width: 60px;
+  height: 28px;
+  font-size: 0.65rem;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 600;
+  color: #FFFFFF;
+  line-height: 0.65rem;
+}
+.page .treasure .rectange .left .top .count {
+  border-radius: 0.2rem 0.2rem 0.2rem 0.2rem;
+  border: 1px solid #ffdc62;
+}
+.page .treasure .rectange .left .top .count .text_1 {
+  height: 0.65rem;
+  font-size: 0.656rem;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 500;
+  color: #FFB733;
+  line-height: 0.65rem;
+}
+.page .treasure .rectange .left .bottom {
+  position: absolute;
+  right: 0rem;
+  top: 1.6rem;
+  width: 4rem;
+  height: 3.5rem;
+}
+.page .treasure .rectange .left .bottom img {
+  width: 100%;
+  height: 100%;
+}
+.page .treasure .rectange .right {
+  float: right;
+  width: 10rem;
+  height: 6rem;
+}
+.page .treasure .rectange .right .right_top,
+.page .treasure .rectange .right .right_middle,
+.page .treasure .rectange .right .right_bottom {
+  margin-top: 0.3rem;
+  width: 100%;
+  height: 1.2rem;
+}
+.page .treasure .rectange .right .right_top {
+  margin-top: 0.7rem;
+  margin-bottom: -0.2rem;
+}
+.page .treasure .rectange .right .right_top span {
+  width: 118px;
+  height: 0.7rem;
+  font-size: 0.7rem;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 550;
+  color: #505050;
+  line-height: 0.7rem;
+  letter-spacing: 1px;
+}
+.page .treasure .rectange .right .right_middle {
+  height: 0.8rem;
+  margin-top: 0.5rem;
+}
+.page .treasure .rectange .right .right_middle .progress-bar {
+  margin-top: 0.8rem;
+  width: 70%;
+  height: 0.35rem;
+  background: #EBEBEB;
+  border-radius: 0.3rem;
+}
+.page .treasure .rectange .right .right_middle .progress-bar .progress {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, #F17FE5 0%, #8D7AE8 100%);
+  border-radius: 0.3rem;
+}
+.page .treasure .rectange .right .right_bottom {
+  position: relative;
+  margin-top: -0.2rem;
+  height: 1.9rem;
+}
+.page .treasure .rectange .right .right_bottom .percentage span {
+  font-size: 0.75rem;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #BBBBBB;
+  line-height: 0.2rem;
+}
+.page .treasure .rectange .right .right_bottom .background {
+  position: absolute;
+  right: 0.9rem;
+  bottom: 0.01rem;
+  width: 4rem;
+  height: 1.5rem;
+  background: url(img/SketchPng910a91cdecd31816d1538130a0915eeefa75d577f0043be315151156f14a8e2b.png);
+  background-size: 100% 100%;
+  text-align: center;
+}
+.page .treasure .rectange .right .right_bottom .background span {
+  font-size: 0.65rem;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #FFFFFF;
+  line-height: 0.65rem;
+  letter-spacing: 1px;
+}
+.page .treasure .rectange-transparent {
+  width: 100%;
+  height: 6rem;
+  margin-top: 0.7rem;
+}
+.page .treasure :nth-child(1) {
+  margin-top: 0rem;
+}
+.page .ranking {
+  width: 4rem;
+  height: 3rem;
+  position: fixed;
+  right: 0.2rem;
+  bottom: 7rem;
+  background: url(img/paihangbang.png) no-repeat;
+  background-size: 100% 100%;
+}

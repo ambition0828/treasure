@@ -1,0 +1,24 @@
+.page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #F4F4F6;
+}
+.page .ruleText {
+  width: 16.693rem;
+  height: 28.16rem;
+  margin: 0 auto;
+  margin-top: 1.4rem;
+  font-size: 0.64rem;
+  color: #505050;
+  line-height: 1rem;
+  letter-spacing: 1px;
+}
+.page .ruleText div {
+  margin-bottom: 0.5rem;
+}
+.page .ruleText .blueText {
+  color: #9B7BE8;
+}

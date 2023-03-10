@@ -38,7 +38,118 @@
   line-height: 30px;
   letter-spacing: 1px;
 }
-.page .list-style .dalilyRanking {
+.page .list-style .defaultTag {
   background: url(img/bkg_2.png) no-repeat;
   background-size: 100% 100%;
+}
+.page .scroll-box {
+  position: absolute;
+  top: 9rem;
+  bottom: 0;
+  left: 1.4rem;
+  width: 17.226rem;
+  margin-top: 1rem;
+  border: 2px solid #FEE278;
+  border-radius: 0.5rem 0.5rem 0 0;
+  background-color: #FFFFFF;
+  overflow: scroll;
+}
+.page .scroll-box .rectange {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 14.6933rem;
+  height: 2.4rem;
+  margin: 0 auto;
+  margin-top: 1.5rem;
+}
+.page .scroll-box .rectange .icon {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.12rem;
+  height: 1.1rem;
+  text-align: center;
+  font-size: 0.619rem;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #E5596C;
+  line-height: 30px;
+  letter-spacing: 1px;
+}
+.page .scroll-box .rectange .icon span {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.page .scroll-box .rectange .icon .topRanking1 {
+  width: 1.12rem;
+  height: 1.1rem;
+  background: url(img/one.png) no-repeat;
+  background-size: 100% 100%;
+}
+.page .scroll-box .rectange .icon .topRanking2 {
+  width: 1.12rem;
+  height: 1.1rem;
+  background: url(img/two.png) no-repeat;
+  background-size: 100% 100%;
+}
+.page .scroll-box .rectange .icon .topRanking3 {
+  width: 1.12rem;
+  height: 1.1rem;
+  background: url(img/three.png) no-repeat;
+  background-size: 100% 100%;
+}
+.page .scroll-box .rectange .userInfo {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  left: 2rem;
+  width: 7.84rem;
+  height: 100%;
+}
+.page .scroll-box .rectange .userInfo .img-box {
+  width: 2.4rem;
+  height: 100%;
+  overflow: hidden;
+}
+.page .scroll-box .rectange .userInfo .img-box img {
+  width: 100%;
+  height: 100%;
+}
+.page .scroll-box .rectange .userInfo .right-detail {
+  width: 5.87rem;
+  height: 100%;
+  margin-left: 0.4rem;
+}
+.page .scroll-box .rectange .userInfo .right-detail .top {
+  width: 100%;
+  height: 49%;
+  font-size: 0.64rem;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #060606;
+  letter-spacing: 1px;
+  padding-top: 0.1rem;
+}
+.page .scroll-box .rectange .userInfo .right-detail .bottom {
+  width: 100%;
+  height: 49%;
+  font-size: 0.586rem;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #060606;
+  letter-spacing: 1px;
+  padding-top: 0.2rem;
+}
+.page .scroll-box .rectange .right-text {
+  width: 2.666rem;
+  height: 100%;
+  margin-top: 0.3rem;
+  font-size: 0.48rem;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #E5596C;
+  letter-spacing: 1px;
 }

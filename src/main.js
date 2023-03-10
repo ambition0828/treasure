@@ -7,7 +7,7 @@ import { RadioGroup, Radio } from 'vant';
 import { CheckboxGroup, Checkbox } from 'vant';
 import { Tab, Tabs } from 'vant';
 import { Tabbar, TabbarItem } from 'vant';
-import { NavBar, Icon, Tag, List } from 'vant';
+import { NavBar, Icon, Tag, List, CountDown } from 'vant'
 
 Vue.component('van-field', Field)
 Vue.component('van-button', Button)
@@ -27,6 +27,7 @@ Vue.component('van-nav-bar', NavBar)
 Vue.component('van-icon', Icon)
 Vue.component('van-tag', Tag)
 Vue.use(List)
+Vue.use(CountDown)
 Vue.config.productionTip = false
 
 new Vue({

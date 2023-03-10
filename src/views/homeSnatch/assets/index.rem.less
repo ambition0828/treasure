@@ -6,6 +6,7 @@
   height: 100%;
   // background-color: #F4F4F6;
   overflow: scroll;
+
   .diamond {
     display: flex;
     justify-content: end;
@@ -80,6 +81,11 @@
         letter-spacing: 1px;
       }
     }
+  }
+
+  // 弹窗复用
+  .diamond-pop {
+    margin-top: 0.8rem;
   }
 
   .copies {
@@ -157,7 +163,7 @@
       font-family: PingFangSC-Regular, PingFang SC;
       font-weight: 400;
       color: #9D9999;
-      line-height: 28px;
+      // line-height: 28px;
       letter-spacing: 1px;
     }
   }
@@ -214,8 +220,8 @@
           font-size: 0.48rem;
           font-family: PingFangSC-Regular, PingFang SC;
           font-weight: 400;
-          color: #464646;
-          // line-height: 25px;
+          color: #7F7F7F;
+          line-height: 1.3rem;
           letter-spacing: 1px;
         }
       }
@@ -238,6 +244,7 @@
 
   // 吸底效果
   .suction-bottom {
+    z-index: 1;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -274,5 +281,70 @@
       // line-height: 40px;
       letter-spacing: 1px;
     }
+  }
+
+  // 支付弹窗
+  .popup {
+    z-index: 1;
+    width: 100%;
+    height: 11.99rem;
+    // border: 1px solid #000;
+    background: url(./img/popup.png) no-repeat;
+    background-size: 100% 100%;
+    position: fixed;
+    bottom: 0;
+
+    .split {
+      width: 17.14rem;
+      height: 0.1rem;
+      // border: 1px solid #000;
+      margin: 0 auto;
+      margin-top: -0.8rem;
+      background: url(./img/split.png) no-repeat;
+      background-size: 100% 100%;
+    }
+
+    .partake {
+      // border: 1px solid #000;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 1.2rem;
+      margin-top: 0.8rem;
+      font-size: 0.69333rem;
+      font-family: PingFangSC-Regular, PingFang SC;
+      font-weight: 400;
+      color: #000000;
+      // line-height: 37px;
+      letter-spacing: 1px;
+
+      .right {
+        // border: 1px solid #000;
+        position: relative;
+        width: 2.96rem;
+        display: flex;
+        text-align: center;
+        justify-content: space-between;
+
+        .subtract,
+        .add {
+          // position: relative;
+          width: 0.6933rem;
+          height: 0.7933rem;
+          // border: 1px solid #000;
+          background-color: #EAEAEA;
+          line-height: 0.7rem;
+        }
+      }
+    }
+  }
+
+  // 透明蒙版
+  .transparent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
   }
 }

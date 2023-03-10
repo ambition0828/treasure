@@ -22,7 +22,7 @@
         </div>
       </div>
       <!-- 底部tabbar -->
-    <van-tabbar v-model="active">
+    <van-tabbar v-model="active" route>
       <van-tabbar-item icon="home-o" to="/homePage">首页</van-tabbar-item>
       <van-tabbar-item icon="friends-o" to="/my">我的</van-tabbar-item>
     </van-tabbar>
@@ -33,7 +33,7 @@
 export default {
   data() {
     return {
-      active: 1
+      active: 0
     }
   },
   methods: {

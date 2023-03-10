@@ -154,3 +154,62 @@
   display: flex;
   flex-wrap: wrap;
 }
+.page .drawReward-code {
+  width: 90%;
+  margin: 1rem auto;
+  background: url(img/bkg_2.png) no-repeat;
+  background-size: 100% 100%;
+}
+.page .drawReward-code .text {
+  font-size: 0.69333rem;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #A0A0A0;
+  letter-spacing: 1px;
+}
+.page .drawReward-code .value {
+  font-size: 0.69333rem;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #505050;
+  letter-spacing: 1px;
+}
+.page .drawReward-code .orderNo {
+  width: 100%;
+  height: 2rem;
+  line-height: 2rem;
+}
+.page .drawReward-code .orderNo span {
+  margin-left: 1rem;
+}
+.page .drawReward-code .orderNo .icon {
+  display: inline-block;
+  width: 0.777rem;
+  height: 0.6933rem;
+  background: url(img/min.png) no-repeat;
+  background-size: 100% 100%;
+}
+.page .drawReward-code .split-role {
+  margin: 0 auto;
+  width: 99%;
+  height: 1px;
+  background: url(img/lujing.png) no-repeat;
+}
+.page .drawReward-code .drawNo .icon {
+  position: relative;
+  top: 0.14rem;
+}
+.page .drawReward-code .drawNo .draw_No {
+  position: relative;
+  left: -0.3rem;
+}
+.page .drawReward-code .codeValue {
+  padding: 0.5rem 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.page .drawReward-code .codeValue span {
+  display: block;
+  text-align: left;
+}
