@@ -113,6 +113,7 @@
   width: 2.4rem;
   height: 100%;
   overflow: hidden;
+  border-radius: 50%;
 }
 .page .scroll-box .rectange .userInfo .img-box img {
   width: 100%;

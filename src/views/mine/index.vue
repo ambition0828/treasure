@@ -4,17 +4,17 @@
     <div class="treasure">
       <div class="rectange">
         <div class="avatar">
-          <img src="./assets/img/avatar.png" alt="" />
+          <img :src="list.avatar" alt="" />
         </div>
-        <div class="username">用户名123</div>
+        <div class="username">{{list.nick_name}}</div>
       </div>
       <div class="order" @click="treasureOrder">
         <div class="order_text_1">夺宝订单</div>
-        <div class="order_text_2">您总共参与0次夺宝</div>
+        <div class="order_text_2">您总共参与{{list.all_join}}次夺宝</div>
       </div>
-      <div class="record">
+      <div class="record" @click="winningRecord">
         <div class="order_text_1">中奖记录</div>
-        <div class="order_text_2">您总共获得0次夺宝</div>
+        <div class="order_text_2">您总共获得{{list.all_luck}}次夺宝</div>
       </div>
       <div class="history">
         <div class="order_text_1" @click="historyTreasure">往期夺宝</div>
@@ -29,10 +29,12 @@
   </div>
 </template>
 <script>
+import { getMineInfo } from "@/api/treasure.js" 
 export default {
   data() {
     return {
       active: 1,
+      list: [],
     };
   },
 
@@ -41,9 +43,18 @@ export default {
       this.$router.push("/historyTreasure");
     },
     treasureOrder() {
-      this.$router.push("/treasureOrder");
+      this.$router.push("/treasureOrder1");
     },
+    winningRecord() {
+      this.$router.push("/winningRecord");
+    }
   },
+  async created() {
+    const res = await getMineInfo() 
+    console.log(res);
+    this.list = res.data
+
+  }
 };
 </script>
 <style scoped lang="less" src="./assets/index.rem.less">

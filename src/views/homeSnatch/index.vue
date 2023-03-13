@@ -157,7 +157,7 @@ export default {
       this.page++;
       this.playerList.push(...res1.data.data);
       this.loading = false;
-      if (this.page > res1.data.total) {
+      if (this.page > res1.data.last_page) {
         this.finished = true;
         // this.$toast.success('最后一页了')
       }
@@ -228,6 +228,7 @@ export default {
         this.showPay = false;
         this.enterPay = false;
         this.showTransparent = false;
+        this.count = 0
       } else if (res.code == 3000) {
         this.$toast.fail(res.msg);
       } else if (res.code == 0) {
@@ -236,11 +237,11 @@ export default {
     },
   },
   async created() {
-    const res = await getTreasureDetail(this.$route.query.id);
+    const res = await getTreasureDetail(
+     this.$route.query.id
+    );
     console.log(res);
-    this.listDetail = res.data;
-
-    // test
+    this.listDetail = res.data
   },
   computed: {
     total() {

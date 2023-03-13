@@ -7,7 +7,7 @@
       @click-left="onClickLeft"
     />
     <div class="diamondCount">
-      <span>&nbsp;[第{{list.id}}期] {{list.title}}</span>
+      <span>&nbsp;[第{{ list.id }}期] {{ list.title }}</span>
     </div>
     <div class="pencil">
       <img src="./assets/img/pencil.png" alt="" />
@@ -15,26 +15,26 @@
     <div class="copies">
       <div class="left">
         <div class="number">
-          <div class="count">{{list.join_count}}</div>
+          <div class="count">{{ list.join_count }}</div>
           <span>参与份数</span>
         </div>
       </div>
       <div class="right">
         <div class="number">
-          <div class="count">{{list.open_num}}</div>
+          <div class="count">{{ list.open_num }}</div>
           <span>开奖份数</span>
         </div>
       </div>
     </div>
     <div class="drawNumber">
       <span class="left">开奖号码</span>
-      <span class="right">{{list.luck_sn}}</span>
+      <span class="right">{{ list.luck_sn }}</span>
     </div>
     <div class="currentTime">
       <div class="title">本期时间</div>
-      <div class="currentTime_1">本期时间：{{ getTime(list.luck_time)}}</div>
-      <div class="finishTime">完成时间：{{ getTime(list.reach_time)}}</div>
-      <div class="startTime">开奖时间：{{ getTime(list.start_time)}}</div>
+      <div class="currentTime_1">本期时间：{{ getTime(list.luck_time) }}</div>
+      <div class="finishTime">完成时间：{{ getTime(list.reach_time) }}</div>
+      <div class="startTime">开奖时间：{{ getTime(list.start_time) }}</div>
     </div>
     <div class="drawRule">
       <div class="title_1">开奖规则</div>
@@ -66,39 +66,58 @@
       <div class="title">中奖玩家</div>
       <div class="userDetail">
         <div class="avatar">
-          <img src="./assets/img/avatar.png" alt="" />
+          <img :src="this.luck_list.avatar" alt="" />
         </div>
         <div class="detail">
-          <div class="userName">用户名123</div>
-          <div class="time">2023-02-2 18:23:21</div>
+          <div class="userName">{{ luck_list.nick_name }}</div>
+          <div class="time">{{ getTime(luck_list.join_time) }}</div>
         </div>
-        <div class="count_1">1份</div>
+        <div class="count_1">{{ luck_list.user_join_count }}份</div>
       </div>
-      <div class="number">1000023</div>
+      <div class="number">{{ luck_list.luck_sn }}</div>
     </div>
-    <div class="drawPlayer" v-for="(item,index) in 5" :key="index" >
-      <div class="title">夺宝玩家</div>
-      <div class="userDetail">
-        <div class="avatar">
-          <img src="./assets/img/avatar.png" alt="" />
+    <van-list
+      v-model="loading"
+      :finished="finished"
+      finished-text="没有更多了"
+      @load="onLoad"
+    >
+      <div class="drawPlayer" v-for="(item, index) in playerList" :key="index">
+        <div class="title">夺宝玩家</div>
+        <div class="userDetail">
+          <div class="avatar">
+            <img :src="item.avatar" alt="" />
+          </div>
+          <div class="detail">
+            <div class="userName">{{item.nick_name}}</div>
+            <div class="time">{{getTime(item.join_time)}}</div>
+          </div>
+          <div class="count_1">{{item.user_join_count}}份</div>
         </div>
-        <div class="detail">
-          <div class="userName">用户名123</div>
-          <div class="time">2023-02-2 18:23:21</div>
+        <div class="flexbileLayout"><div class="number" v-for="item_son,index in item.luck_sn_list" :key="index">{{item_son}}</div>
+        
         </div>
-        <div class="count_1">1份</div>
       </div>
-      <div class="number">1000023</div>
-    </div>
+    </van-list>
   </div>
 </template>
 <script>
-import {getTreasureDetail} from '@/api/treasure.js'
+import { getTreasureDetail, getLuckUserInfo,getTreasurePlayer } from "@/api/treasure.js";
 export default {
   data() {
     return {
-      list:{}
-    }
+      list: {},
+      // 中奖列表
+      luck_list: {},
+      // 夺宝人列表
+      playerList:[],
+      // 夺宝人号码列表
+      // luck_num_list: [],
+      loading: false,
+      finished: false,
+      // 当前页
+      page: 1
+    };
   },
   methods: {
     onClickLeft() {
@@ -123,15 +142,35 @@ export default {
       var m = date.getMinutes();
       m = m < 10 ? "0" + m : m;
       return y + M + d + " " + h + m;
-    }
+    },
+    async onLoad() {
+      const res = await getTreasurePlayer({
+        id: this.$route.query.id,
+        page: this.page
+      })
+      console.log('当前页',res);
+      this.page++
+      this.playerList.push(...res.data.data)
+      this.loading = false
+      if (this.page > res.data.total) {
+        this.finished = true
+      }
+    },
   },
-  async created () {
-    const res = await getTreasureDetail({
-      id: this.$route.query.id
-    })
+  async created() {
+    const res = await getTreasureDetail(this.$route.query.id);
     console.log(res);
-    this.list = res.data
-  }
+    this.list = res.data;
+    if(res.code == 3000) {
+      this.$toast.fail(res.msg)
+    } else if (res.code == 0) {
+      this.$toast.fail(res.msg)
+    }
+
+    const res1 = await getLuckUserInfo(this.$route.query.id);
+    console.log(res1);
+    this.luck_list = res1.data;
+  },
 };
 </script>
 <style scoped lang="less" src="./assets/index.rem.less">

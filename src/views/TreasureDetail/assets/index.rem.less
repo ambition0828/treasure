@@ -187,7 +187,7 @@
   .drawPlayer {
     position: relative;
     width: 16.986rem;
-    height: 5.5rem;
+    // height: 5.5rem;
     // border: 1px solid #000;
     margin: 1rem 0 0 1.52rem;
 
@@ -202,6 +202,7 @@
 
     .userDetail {
       display: flex;
+
       .avatar {
         width: 1.6rem;
         height: 1.6rem;
@@ -211,10 +212,13 @@
         img {
           width: 1.6rem;
           height: 1.6rem;
+          border-radius: 50%;
         }
       }
+
       .detail {
-          margin-left: 0.8rem;
+        margin-left: 0.8rem;
+
         .userName {
           font-size: 0.6866rem;
           font-family: PingFangSC-Medium, PingFang SC;
@@ -223,6 +227,7 @@
           // line-height: 30px;
           letter-spacing: 1px;
         }
+
         .time {
           font-size: 0.48rem;
           font-family: PingFangSC-Regular, PingFang SC;
@@ -232,6 +237,7 @@
           letter-spacing: 1px;
         }
       }
+
       .count_1 {
         position: absolute;
         right: 0rem;
@@ -243,8 +249,17 @@
         letter-spacing: 1px;
       }
     }
+
+    .flexbileLayout {
+      display: flex;
+      flex-wrap: wrap;
+      // justify-content: space-around;
+      text-align: left;
+    }
+
     .number {
       margin-top: 0.4rem;
+      margin-right: 0.53rem;
       width: 5.12rem;
       height: 1.54666rem;
       background: url(./img/number_1.png) no-repeat;

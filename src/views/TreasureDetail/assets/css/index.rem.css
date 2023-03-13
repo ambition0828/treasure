@@ -156,7 +156,6 @@
 .page .drawPlayer {
   position: relative;
   width: 16.986rem;
-  height: 5.5rem;
   margin: 1rem 0 0 1.52rem;
 }
 .page .drawPlayer .title {
@@ -178,6 +177,7 @@
 .page .drawPlayer .userDetail .avatar img {
   width: 1.6rem;
   height: 1.6rem;
+  border-radius: 50%;
 }
 .page .drawPlayer .userDetail .detail {
   margin-left: 0.8rem;
@@ -206,8 +206,14 @@
   line-height: 1.5rem;
   letter-spacing: 1px;
 }
+.page .drawPlayer .flexbileLayout {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: left;
+}
 .page .drawPlayer .number {
   margin-top: 0.4rem;
+  margin-right: 0.53rem;
   width: 5.12rem;
   height: 1.54666rem;
   background: url(img/number_1.png) no-repeat;

@@ -7,8 +7,8 @@
       @click-left="onClickLeft"
     >
     </van-nav-bar>
-    <van-tabs class="tab-el"  v-model="active" sticky>
-      <van-tab  title="待开奖">
+    <van-tabs class="tab-el" @click="test" v-model="active" sticky>
+      <van-tab title="待开奖">
         <van-list
           v-model="loading"
           :finished="finished"
@@ -19,7 +19,7 @@
             class="rectange"
             v-for="(item, index) in list"
             :key="index"
-            @click="treasureOrderDetail(item.id,1)"
+            @click="treasureOrderDetail(item.id, 1)"
           >
             <div class="left-img">
               <img :src="item.reward_icon" alt="" />
@@ -62,13 +62,13 @@
             class="rectange"
             v-for="(item, index) in list_2"
             :key="index"
-            @click="treasureOrderDetail(item.id,2)"
+            @click="treasureOrderDetail(item.id, 2)"
           >
             <div class="left-img">
               <img :src="item.reward_icon" alt="" />
             </div>
             <div class="right-detail">
-              <span class="diamond-count">{{item.title}}</span>
+              <span class="diamond-count">{{ item.title }}</span>
               <div class="progress-box">
                 <div class="progress-bar">
                   <span
@@ -79,15 +79,15 @@
                 <span class="right-progress">{{ item.join_ratio }}%</span>
               </div>
               <div class="purchase">
-                <span>购买时间：{{getTime(item.join_time)}}</span>
+                <span>购买时间：{{ getTime(item.join_time) }}</span>
               </div>
               <div class="surplus">
-                <span class="number">中奖号：{{item.luck_sn}}</span>
+                <span class="number">中奖号：{{ item.luck_sn }}</span>
               </div>
               <div class="count">
-                <span id="count">数量：{{item.join_count}}</span>
+                <span id="count">数量：{{ item.join_count }}</span>
                 <div class="total">
-                  合计：<span id="diamond">{{item.all_money}}钻石</span>
+                  合计：<span id="diamond">{{ item.all_money }}钻石</span>
                 </div>
               </div>
             </div>
@@ -134,6 +134,7 @@ export default {
     },
     // 上拉加载
     async onLoad(type) {
+      console.log('type',type,'active',this.active);
       const res = await terasureOrder({
         type: type,
         page: this.page,
@@ -146,7 +147,7 @@ export default {
         this.list_2.push(...res.data.data);
       }
       this.loading = false;
-      if (this.page > res.data.total) {
+      if (this.page > res.data.last_page) {
         this.finished = true;
       }
     },
@@ -159,7 +160,7 @@ export default {
       // 判断待开将 已开奖参数
       this.list_2.push(...res.data.data);
       this.loading = false;
-      if (this.page > res.data.total) {
+      if (this.page > res.data.last_page) {
         this.finished = true;
       }
     },
@@ -184,21 +185,36 @@ export default {
       m = m < 10 ? "0" + m : m;
       return y + M + d + " " + h + m;
     },
-    treasureOrderDetail(id,mark) {
-      console.log(id,mark);
+    treasureOrderDetail(id, mark) {
+      console.log(id, mark);
       this.$router.push({
-        path:'/treasureOrderDetail',
+        path: "/treasureOrderDetail",
         query: {
           id: id,
-          mark: mark
-        }
+          mark: mark,
+        },
       });
     },
+    async test() {
+      // console.log(name,title);
+      console.log("haha");
+      const res = await terasureOrder({
+        type: 2,
+        page: this.page,
+      });
+      this.page++;
+      // 判断待开将 已开奖参数
+      this.list_2.push(...res.data.data);
+      this.loading = false;
+      if (this.page > res.data.last_page) {
+        this.finished = true;
+      }
+    },
   },
-  created () {
+  created() {
     // 已开奖有bug
-    this.onLoad_2()
-  }
+    // this.onLoad_2();
+  },
 };
 </script>
 <style scoped lang="less" src="./assets/idnex.rem.less">

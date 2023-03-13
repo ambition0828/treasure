@@ -25,14 +25,14 @@
               <span class="text_1">差{{ item.remain }}份</span>
             </div>
             <!-- 倒计时 -->
-            <div class="count countDown" v-show="item.open_state == 1">
+            <!-- <div class="count countDown" v-show="item.open_state == 1">
               <van-count-down
                 class="countDownEl"
                 :time="item.open_time * 1000"
                 format="mm:ss"
               />
               <span class="text_1">后开奖</span>
-            </div>
+            </div> -->
           </div>
           <div class="bottom">
             <img :src="item.reward_icon" alt="" />

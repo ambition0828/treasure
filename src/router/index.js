@@ -10,7 +10,9 @@ import Mine from '@/views/mine/index.vue'
 import HistoryTreasure from '@/views/historyTreasure/index.vue'
 import TreasureDetail from '@/views/TreasureDetail/index.vue'
 import TreasureOrder from '@/views/treasureOrder/index.vue'
+import TreasureOrder1 from '@/views/treasureOrder1/index.vue'
 import TreasureOrderDetail from '@/views/treasureOrderDetail/index.vue'
+import WinningRecord from '@/views/winningRecord/index.vue'
 
 Vue.use(VueRouter)
 
@@ -70,10 +72,19 @@ const routes = [
     path: '/treasureOrder',
     component: TreasureOrder,
   },
+  {
+    path: '/treasureOrder1',
+    component: TreasureOrder1,
+  },
   // 夺宝订单详情
   {
     path: '/treasureOrderDetail',
     component: TreasureOrderDetail,
+  },
+  // 中奖记录
+  {
+    path: '/winningRecord',
+    component: WinningRecord,
   },
 ]
 

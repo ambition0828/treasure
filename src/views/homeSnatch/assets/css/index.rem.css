@@ -154,6 +154,7 @@
   width: 2.933rem;
   height: 2.933rem;
   overflow: hidden;
+  border-radius: 50%;
 }
 .page .drawPlayer .userDetail .avatar img {
   width: 2.933rem;
